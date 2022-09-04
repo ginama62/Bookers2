@@ -1,8 +1,26 @@
-<table class="table table-striped">
+
 <h2>User info</h2>
-    <p><%= image_tag user.get_profile_image(100,100) %></p>
-    <h6>name <%= user.name %></h6>
-    <h6>introduction <%= user.introduction %></h6>
+
+<table class="table">
+
+  <tr>
+    <th><%= image_tag user.get_profile_image(100,100) %></th>
+  </tr>
+
+  <tr>
+    <th>name <%= user.name %></th>
+  </tr>
+
+  <tr>
+    <th>introduction <%= user.introduction %></th>
+  </tr>
+
+  </table>
+
+  <div class='row'>
+  <a class="btn btn-outline-secondary btn-block edit_user_path">
+    <i class="fas fa-user-cog"></i>
+</a></div>
 
 <h2>New book</h2>
 
@@ -14,7 +32,8 @@
   <p>Opinion</p>
   <%= f.text_area :body %>
 
-  <%= f.submit 'Create Book' %>
+  <div class="form-group">
+  <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book" />
+  </div>
 
 <% end %>
-</table>
