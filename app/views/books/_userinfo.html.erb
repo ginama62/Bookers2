@@ -1,3 +1,10 @@
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this obj from being saved:
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+
+<% end %>
 
 <h2>User info</h2>
 
@@ -34,7 +41,7 @@
 
   <p>Opinion</p>
   <%= f.text_area :body %>
-  
+
   <%= f.submit 'Create Book',class:"btn btn-success" %>
 
   <!--<div class="form-group">-->
